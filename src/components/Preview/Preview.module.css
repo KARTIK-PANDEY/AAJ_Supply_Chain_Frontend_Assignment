@@ -1,0 +1,352 @@
+.previewCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.previewHeader {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: white;
+  padding: var(--spacing-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.previewHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.orderIdWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.orderIdLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.orderId {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: monospace;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.shipmentDate {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: var(--spacing-2);
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-2);
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badgeDelivery {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.badgeExpress {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.badgeFragile {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.badgeInsured {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.previewBody {
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  background-color: var(--color-surface);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.sectionTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-background);
+  padding-bottom: var(--spacing-2);
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-5);
+}
+
+@media (max-width: 640px) {
+  .addressGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.addressCard {
+  background-color: var(--color-background);
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.addressCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-border);
+}
+
+.addressCard.consignor::before {
+  background-color: var(--color-text-light);
+}
+
+.addressCard.consignee::before {
+  background-color: var(--color-primary);
+}
+
+.addressRole {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-2);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.addressName {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+
+.addressText {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.packageList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.packageItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  overflow: hidden;
+  transition: background-color var(--transition-fast);
+}
+
+.packageItem:hover {
+  background-color: var(--color-background);
+}
+
+.packageIndex {
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  padding: var(--spacing-3) var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--color-border);
+}
+
+.packageContent {
+  padding: var(--spacing-3) var(--spacing-4);
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.packageInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.packageName {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.packageDimensions {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.packageStats {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.packageWeight {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.packageValue {
+  font-size: 0.85rem;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.summarySection {
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--color-border);
+  padding: var(--spacing-6);
+  margin-top: auto;
+}
+
+.summaryTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-4);
+  text-align: center;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+  background: var(--color-surface);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.summaryItem {
+  text-align: center;
+  position: relative;
+}
+
+.summaryItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background-color: var(--color-border);
+}
+
+.summaryLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+  letter-spacing: 0.05em;
+}
+
+.summaryValue {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.summaryValue.highlight {
+  color: var(--color-primary);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8) var(--spacing-5);
+  text-align: center;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  min-height: 300px;
+}
+
+.emptyStateIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+  opacity: 0.5;
+}
+
+.emptyStateTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+
+.valueTransition {
+  transition: all 0.3s ease;
+}
